@@ -6,22 +6,22 @@ allprojects {
 
 ext {
   //Android
-  androidBuildToolsVersion = "24.0.1"
-  androidMinSdkVersion = 15
-  androidTargetSdkVersion = 21
-  androidCompileSdkVersion = 21
+  androidBuildToolsVersion = "28.0.3"
+  androidMinSdkVersion = 19
+  androidTargetSdkVersion = 28
+  androidCompileSdkVersion = 28
 
   //Libraries
   daggerVersion = '2.8'
-  butterKnifeVersion = '7.0.1'
-  recyclerViewVersion = '21.0.3'
+  butterKnifeVersion = '8.7.0'
+  recyclerViewVersion = '28.0.0'
   rxJavaVersion = '2.0.2'
   rxAndroidVersion = '2.0.1'
   javaxAnnotationVersion = '1.0'
   javaxInjectVersion = '1'
   gsonVersion = '2.3'
   okHttpVersion = '2.5.0'
-  androidAnnotationsVersion = '21.0.3'
+  androidAnnotationsVersion = '28.0.0'
   arrowVersion = '1.0.0'
 
   //Testing
@@ -40,6 +40,7 @@ ext {
       daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
       dagger:             "com.google.dagger:dagger:${daggerVersion}",
       butterKnife:        "com.jakewharton:butterknife:${butterKnifeVersion}",
+      butterKnifeCompiler:"com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
       recyclerView:       "com.android.support:recyclerview-v7:${recyclerViewVersion}",
       rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
       rxAndroid:          "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
