@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 //apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'kotlin'
+//apply plugin: "kotlin-kapt"
 
 android {
   def globalConfiguration = rootProject.extensions.getByName("ext")
@@ -19,8 +22,8 @@ android {
   }
 
   compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_7
-    targetCompatibility JavaVersion.VERSION_1_7
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
   }
     packagingOptions {
         resources {
@@ -31,7 +34,13 @@ android {
 
   signingConfigs {
     debug {
-      storeFile file('../buildsystem/debug.keystore')
+      storeFile file('../../femom-debug.keystore')
+      storePassword 'android'
+      keyAlias 'androiddebugkey'
+      keyPassword 'android'
+    }
+    release {
+      storeFile file('../../femom-debug.keystore')
       storePassword 'android'
       keyAlias 'androiddebugkey'
       keyPassword 'android'
@@ -41,6 +50,9 @@ android {
   buildTypes {
     debug {
       signingConfig signingConfigs.debug
+    }
+    release {
+      signingConfig signingConfigs.release
     }
   }
     namespace 'com.fernandocejas.android10.sample.presentation'
@@ -67,6 +79,9 @@ dependencies {
   implementation presentationDependencies.recyclerView
   implementation presentationDependencies.rxJava
   implementation presentationDependencies.rxAndroid
+
+  implementation platform('com.google.firebase:firebase-bom:31.1.1')
+  implementation 'com.google.firebase:firebase-analytics'
   compileOnly presentationDependencies.javaxAnnotation
 
   androidTestImplementation presentationTestDependencies.mockito
