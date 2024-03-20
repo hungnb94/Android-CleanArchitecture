@@ -6,12 +6,12 @@ sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
 configurations {
-  compileOnly
+  provided
 }
 
 sourceSets {
   main {
-//    compileClasspath += configurations.provided
+    compileClasspath += configurations.provided
   }
 }
 
